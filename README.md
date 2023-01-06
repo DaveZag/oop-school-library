@@ -23,9 +23,9 @@
 - [⭐️ Show your support](#support)
 - [📝 License](#license)
 
-# 📖 Custom Enumerable <a name="about-project"></a>
+# 📖 OOP Library <a name="about-project"></a>
 
-> This project is an implementation of a morse code decoder. It translates morse code message into an understandable language.
+> This project is an implementation of a Library using object oriented programming in Ruby.
 
 The morse code used as reference:
 
@@ -53,7 +53,7 @@ In order to run this project you need:
 Clone this project on your local machine using the following command on your terminal:
 
 ```sh
-  git clone https://github.com/DaveZag/decode-morse.git
+  git clone https://github.com/DaveZag/oop-school-library.git
 ```
 
 ### Install
