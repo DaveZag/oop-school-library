@@ -1,8 +1,9 @@
 require_relative 'decorators'
+require_relative 'rental'
 
 class Person < Nameable
   attr_reader :id
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
 
   def initialize(age, name = 'unknown', parent_permission: true)
     super()
@@ -21,15 +22,13 @@ class Person < Nameable
     @name
   end
 
+  def can_use_services?
+    of_age? || parent_permission
+  end
+
   def of_age?
     @age >= 18
   end
 
   private :of_age?
-
-  # Public methods
-
-  def can_use_services?
-    of_age? || parent_permission
-  end
 end
