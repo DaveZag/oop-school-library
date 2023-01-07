@@ -10,6 +10,11 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
+  end
+
+  def add_rental(date, book)
+    Rental.new(self, book, date)
   end
 
   def correct_name
