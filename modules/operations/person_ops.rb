@@ -1,5 +1,5 @@
-require_relative 'student'
-require_relative 'teacher'
+require_relative '../student'
+require_relative '../teacher'
 
 module PersonOperations
   # List all created people

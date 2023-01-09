@@ -1,6 +1,6 @@
-require_relative 'operations/books_ops'
-require_relative 'operations/person_ops'
-require_relative 'operations/rentals_ops'
+require_relative './operations/books_ops'
+require_relative './operations/person_ops'
+require_relative './operations/rentals_ops'
 
 class App
   include BookOperations
