@@ -38,11 +38,12 @@ module Actions
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     person_type = gets.chomp.to_i
 
-    case person_type
-    when 1
+    if person_type == 1
       add_student
-    when 2
+    elsif person_type == 2
       add_teacher
+    else
+        return "\nUnknown input. Try again."
     end
 
     puts 'Person created successfully'
