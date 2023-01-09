@@ -1,11 +1,11 @@
-require_relative 'student'
-require_relative 'teacher'
-require_relative 'rental'
-require_relative 'book'
-require_relative 'app_operations'
+require_relative 'operations/books_ops'
+require_relative 'operations/person_ops'
+require_relative 'operations/rentals_ops'
 
 class App
-  include Actions
+  include BookOperations
+  include RentalOperations
+  include PersonOperations
 
   def initialize
     @books = []
@@ -21,45 +21,6 @@ class App
     6 - List all rentals for a given person id
     7 - Exit
     "
-  end
-
-  def list_books
-    if @books.empty?
-      puts 'No book found. Please insert one.'
-    else
-      @books.each_with_index do |book, index|
-        puts "#{index}) Title: \"#{book.title}\", Author: #{book.author} "
-      end
-    end
-  end
-
-  def list_people
-    if @people.empty?
-      puts 'No one was found. Please create a person then try again.'
-    else
-      @people.each_with_index do |person, index|
-        puts "#{index})- [#{person.class}] Name: #{person.name}, ID:#{person.id}, Age:#{person.age}"
-      end
-    end
-  end
-
-  # list people with their rentals
-  def list_person_rentals
-    print "Person's ID:"
-    id = gets.chomp.to_i
-    puts 'Rentals: '
-
-    found_person = @people.select { |person| person.id == id }
-
-    if found_person.empty?
-      puts "\nNo one with this ID was found."
-    elsif found_person[0].rentals.empty?
-      puts "\nThis person has no rentals."
-    else
-      found_person[0].rentals.each do |rental|
-        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
-      end
-    end
   end
 
   # user choice handler

@@ -1,3 +1,5 @@
+require_relative 'rental'
+
 module RentalOperations
   # create rental
   def create_rental
