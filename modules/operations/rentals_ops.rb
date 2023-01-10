@@ -15,6 +15,7 @@ module RentalOperations
     rental_date = gets.chomp
 
     Rental.new(@people[person_id], @books[book_id], rental_date)
+    puts "\nRental created successfully."
   end
 
   # list people with their rentals

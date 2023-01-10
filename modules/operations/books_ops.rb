@@ -19,5 +19,7 @@ module BookOperations
     author = gets.chomp
 
     @books.push(Book.new(title, author))
+    
+    puts "\nBook created successfully."
   end
 end

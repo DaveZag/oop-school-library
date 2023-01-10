@@ -27,7 +27,7 @@ module PersonOperations
       return "\nUnknown input. Try again."
     end
 
-    puts 'Person created successfully'
+    puts "\nPerson created successfully"
   end
 
   def add_student
