@@ -8,6 +8,7 @@ module BookOperations
       @books.each_with_index do |book, index|
         puts "#{index}) Title: \"#{book.title}\", Author: #{book.author} "
       end
+      puts
     end
   end
 
@@ -19,7 +20,7 @@ module BookOperations
     author = gets.chomp
 
     @books.push(Book.new(title, author))
-    
+
     puts "\nBook created successfully."
   end
 end

@@ -34,6 +34,7 @@ module RentalOperations
       found_person[0].rentals.each do |rental|
         puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
       end
+      puts
     end
   end
 end
