@@ -33,7 +33,7 @@ module BookOperations
     books = []
     unless data.empty?
       data.map do |book|
-        books.push(Book.new(book['title'], book['author']))
+        books.push(Book.new(book['title'], book['author'], book['id']))
       end
     end
     books

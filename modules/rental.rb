@@ -1,16 +1,15 @@
 class Rental
   # getters and setters
-  attr_reader :person, :book
+  attr_reader :person, :book, :id
   attr_accessor :date
 
   def initialize(person, book, date)
     @person = person
-    person.rentals << self
-
     @book = book
-    book.rentals << self
-
     @date = date
+
+    person.rentals << self
+    book.rentals << self
   end
 
   # data Serialization
