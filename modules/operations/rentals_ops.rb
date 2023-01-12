@@ -2,7 +2,6 @@ require 'json'
 require_relative '../rental'
 require_relative './file_ops'
 
-
 module RentalOperations
   FILE_PATH = './data_files/rentals.json'.freeze
 
