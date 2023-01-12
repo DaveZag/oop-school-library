@@ -7,9 +7,12 @@ class App
   include RentalOperations
   include PersonOperations
 
+  attr_reader :book, :rentals, :person
+
   def initialize
-    @books = []
-    @people = []
+    @books = load_books
+    @people = load_people
+    @rentals = load_rentals
 
     @welcome_message = "
     Please choose an option entering a number:

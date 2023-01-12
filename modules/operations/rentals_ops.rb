@@ -1,6 +1,34 @@
+require 'json'
 require_relative '../rental'
+require_relative './file_ops'
+
 
 module RentalOperations
+
+  FILE_PATH = './data_files/rentals.json'
+
+  # Load all rentals and store them in the rentals instance variable
+  def load_rentals
+    data = open_file(FILE_PATH) # The returned value is an array 
+    rentals = []
+
+    data.map do |rental|
+      person_id = rental['person']['id']
+      book_id = rental['book']['id']
+      rental.push(Rental.new(get_person(person_id), get_book(book_id), rental['date']))
+    end
+
+    rentals
+  end
+
+  def get_person(id)
+    @person.find {|person| person.id == id}
+  end
+
+  def get_book(id)
+    @books.find {|book| book.id == id}
+  end
+
   # create rental
   def create_rental
     puts 'Select a book from the following list by number:'
@@ -14,7 +42,9 @@ module RentalOperations
     print 'Date(YY/MM/DD): '
     rental_date = gets.chomp
 
-    Rental.new(@people[person_id], @books[book_id], rental_date)
+    @rentals.push(Rental.new(@people[person_id], @books[book_id], rental_date))
+    save_rentals
+    
     puts "\nRental created successfully."
   end
 
@@ -36,5 +66,13 @@ module RentalOperations
       end
       puts
     end
+  end
+
+  # Save rentals if any
+  def save_rentals
+    return unless @rentals.any? && File.exist?(FILE_PATH)
+
+    rentals_string = JSON.generate(@rentals, max_nesting: false)
+    File.write(FILE_PATH, rentals_string)
   end
 end
