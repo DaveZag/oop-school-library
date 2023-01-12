@@ -17,14 +17,14 @@ class Student < Person
     '¯\(ツ)/¯'
   end
 
-    # data Serialization
-    def to_json(options = {})
-      {
-        personType: self.class.name,
-        id: @id,
-        name: @name,
-        age: @age,
-        parent_permission: @parent_permission
-      }.to_json(options)
-    end
+  # data Serialization
+  def to_json(options = {})
+    {
+      personType: self.class.name,
+      id: @id,
+      name: @name,
+      age: @age,
+      parent_permission: @parent_permission
+    }.to_json(options)
+  end
 end

@@ -4,12 +4,11 @@ require_relative './file_ops'
 
 
 module RentalOperations
-
-  FILE_PATH = './data_files/rentals.json'
+  FILE_PATH = './data_files/rentals.json'.freeze
 
   # Load all rentals and store them in the rentals instance variable
   def load_rentals
-    data = open_file(FILE_PATH) # The returned value is an array 
+    data = open_file(FILE_PATH) # The returned value is an array
     rentals = []
 
     data.map do |rental|
@@ -22,11 +21,11 @@ module RentalOperations
   end
 
   def get_person(id)
-    @person.find {|person| person.id == id}
+    @person.find { |person| person.id == id }
   end
 
   def get_book(id)
-    @books.find {|book| book.id == id}
+    @books.find { |book| book.id == id }
   end
 
   # create rental
@@ -44,7 +43,7 @@ module RentalOperations
 
     @rentals.push(Rental.new(@people[person_id], @books[book_id], rental_date))
     save_rentals
-    
+
     puts "\nRental created successfully."
   end
 

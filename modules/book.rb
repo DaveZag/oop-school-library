@@ -3,7 +3,7 @@ require_relative 'rental'
 class Book
   attr_accessor :title, :author, :rentals
 
-  def initialize(title, author, id = Random.rand(1..10_000))
+  def initialize(title, author, _id = Random.rand(1..10_000))
     @title = title
     @author = author
     @rentals = []
@@ -17,7 +17,7 @@ class Book
   def to_json(options = {})
     {
       title: @title,
-      author: @author,
+      author: @author
     }.to_json(options)
   end
 end
