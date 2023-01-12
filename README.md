@@ -69,7 +69,7 @@ bundle install
 To run the project, execute the following command:
 
 ```sh
-  ruby decode.rb
+  ruby main.rb
 ```
 
 ## Run Tests
