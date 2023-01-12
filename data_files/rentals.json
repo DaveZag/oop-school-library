@@ -1,1 +1,1 @@
-[{"person":{"personType":"Teacher","id":740,"name":"Didi","age":34,"specialization":"biology"},"book":{"title":"At the quest for the lost city","author":"Jijo Meck"},"date":"2023/02/02"}]
+[{"person":{"personType":"Student","id":449,"name":"Dodo Jeck","age":15,"parent_permission":true},"book":{"id":7439,"title":"Concepts of Biology","author":"Rebecca Roush"},"date":"2023/03/03"}]

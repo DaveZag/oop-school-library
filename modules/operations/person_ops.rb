@@ -1,30 +1,31 @@
+require 'json'
 require_relative '../student'
 require_relative '../teacher'
 require_relative './file_ops'
 
 module PersonOperations
-  FILE_PATH = './data_files/people.json'
+  FILE_PATH = './data_files/people.json'.freeze
 
   # List all created people
   def list_people
     if @people.empty?
       puts 'No one was found. Please create a person then try again.'
     else
-      @people.each_with_index do |person, index| 
+      @people.each_with_index do |person, index|
         puts "#{index})- [#{person.class}] Name: #{person.name}, ID:#{person.id}, Age:#{person.age}"
       end
     end
     puts
   end
 
-   # load and push data into people's array after creating the corresponding objects either teacher or student
-   def load_people
-    data = open_file(FILE_PATH)  # The returned value is an array 
+  # load and push data into people's array after creating the corresponding objects either teacher or student
+  def load_people
+    data = open_file(FILE_PATH) # The returned value is an array
     people = []
 
-    if !data.empty?
+    unless data.empty?
       data.map do |person|
-        if person['personType'] == 'Teacher' 
+        if person['personType'] == 'Teacher'
           people.push(Teacher.new(person['specialization'], person['age'], person['name']))
         else
           people.push(Student.new(person['age'], person['name'], person['parent_permission']))
@@ -40,10 +41,9 @@ module PersonOperations
   def save_people
     return unless @people.any?
     return unless File.exist?(FILE_PATH)
-    
+
     people_string = JSON.generate(@people, max_nesting: false)
 
-    puts "The book to be saved #{@people} and the generated string is: #{people_string}"
     File.write(FILE_PATH, people_string)
   end
 
@@ -61,7 +61,7 @@ module PersonOperations
       return "\nUnknown input. Try again."
     end
 
-    save_people 
+    save_people
 
     puts "\nPerson created successfully"
   end

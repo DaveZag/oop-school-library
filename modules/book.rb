@@ -4,6 +4,7 @@ class Book
   attr_accessor :title, :author, :rentals
 
   def initialize(title, author, id = Random.rand(1..10_000))
+    @id = id
     @title = title
     @author = author
     @rentals = []
@@ -16,8 +17,9 @@ class Book
   # data Serialization
   def to_json(options = {})
     {
+      id: @id,
       title: @title,
-      author: @author,
+      author: @author
     }.to_json(options)
   end
 end

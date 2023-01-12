@@ -46,7 +46,7 @@ class App
 
   # Run app until the exist option is chosen
   def run
-    puts '============= Welcome to the School Library App! =============='
+    puts "\n============= Welcome to the School Library App! =============="
     terminate = false
 
     until terminate
