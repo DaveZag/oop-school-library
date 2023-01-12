@@ -56,6 +56,10 @@ class App
       if number.between?(1, 6)
         user_choice(number)
       elsif number == 7
+        save_rentals
+        save_people
+        save_books
+
         terminate = true
         puts "Thanks for using the app. \nExisting..."
 

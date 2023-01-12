@@ -4,12 +4,14 @@ class Rental
   attr_accessor :date
 
   def initialize(person, book, date)
-    @person = person
-    @book = book
     @date = date
 
-    person.rentals << self
+    @book = book
     book.rentals << self
+
+    @person = person
+    # puts person.inspect
+    person.rentals << self
   end
 
   # data Serialization

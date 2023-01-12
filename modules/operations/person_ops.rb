@@ -26,9 +26,9 @@ module PersonOperations
     unless data.empty?
       data.map do |person|
         if person['personType'] == 'Teacher'
-          people.push(Teacher.new(person['specialization'], person['age'], person['name']))
+          people.push(Teacher.new(person['specialization'], person['age'], person['name'], person['id']))
         else
-          people.push(Student.new(person['age'], person['name'], person['parent_permission']))
+          people.push(Student.new(person['age'], person['name'], person['parent_permission'], person['id']))
         end
       end
       return people
@@ -60,8 +60,6 @@ module PersonOperations
     else
       return "\nUnknown input. Try again."
     end
-
-    save_people
 
     puts "\nPerson created successfully"
   end

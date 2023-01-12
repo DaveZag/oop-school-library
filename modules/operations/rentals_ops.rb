@@ -1,6 +1,7 @@
 require 'json'
 require_relative '../rental'
 require_relative './file_ops'
+require_relative '../book'
 
 module RentalOperations
   FILE_PATH = './data_files/rentals.json'.freeze
@@ -13,7 +14,9 @@ module RentalOperations
     data.map do |rental|
       person_id = rental['person']['id']
       book_id = rental['book']['id']
-      rentals.push(Rental.new(get_person(person_id), get_book(book_id), rental['date']))
+      new_object = Rental.new(get_person(person_id), get_book(book_id), rental['date'])
+
+      rentals.push(new_object)
     end
 
     rentals
@@ -41,7 +44,6 @@ module RentalOperations
     rental_date = gets.chomp
 
     @rentals.push(Rental.new(@people[person_id], @books[book_id], rental_date))
-    save_rentals
 
     puts "\nRental created successfully."
   end
