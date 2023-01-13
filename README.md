@@ -80,6 +80,12 @@ Run the following command to catch all style errors:
 rubocop
 ```
 
+Run the following command for the rspec tests(with details):
+
+```sh
+rspec ./spec --format documentation
+```
+
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Dave Zagabe**
