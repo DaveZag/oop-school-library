@@ -69,7 +69,7 @@ bundle install
 To run the project, execute the following command:
 
 ```sh
-  ruby decode.rb
+  ruby main.rb
 ```
 
 ## Run Tests
@@ -87,6 +87,12 @@ rubocop
 - GitHub: [@daveZag](https://github.com/daveZag)
 - Twitter: [@davezagabe2](https://twitter.com/davezagabe2)
 - LinkedIn: [@davezagabe](https://www.linkedin.com/in/davezagabe/)
+
+👤 **John Mutisya**
+
+- GitHub: [@John Jioko](https://github.com/johnkioko)
+- Twitter: [@John Web Dev](https://twitter.com/John_Web_Dev)
+- LinkedIn: [@John Mutisya](https://www.linkedin.com/in/johnmutisya/)
 
 ## 🤝 Contributing <a name="contributing"></a>
 

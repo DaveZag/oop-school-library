@@ -7,9 +7,12 @@ class App
   include RentalOperations
   include PersonOperations
 
+  attr_reader :book, :rentals, :person
+
   def initialize
-    @books = []
-    @people = []
+    @books = load_books
+    @people = load_people
+    @rentals = load_rentals
 
     @welcome_message = "
     Please choose an option entering a number:
@@ -43,7 +46,7 @@ class App
 
   # Run app until the exist option is chosen
   def run
-    puts '============= Welcome to the School Library App! =============='
+    puts "\n============= Welcome to the School Library App! =============="
     terminate = false
 
     until terminate
@@ -53,6 +56,10 @@ class App
       if number.between?(1, 6)
         user_choice(number)
       elsif number == 7
+        save_rentals
+        save_people
+        save_books
+
         terminate = true
         puts "Thanks for using the app. \nExisting..."
 
