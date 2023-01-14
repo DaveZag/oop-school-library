@@ -64,6 +64,12 @@ Run the following command to install all project's dependencies:
 bundle install
 ```
 
+Run the following command to install Rspec for tests:
+
+```sh
+gem install rspec
+```
+
 ### Usage
 
 To run the project, execute the following command:
