@@ -27,8 +27,6 @@
 
 > This project is an implementation of a Library using object oriented programming in Ruby. This app allows users to create new students or teachers, new books, and save records of who borrowed a given book and the date it was borrowed.
 
-The morse code used as reference:
-
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
