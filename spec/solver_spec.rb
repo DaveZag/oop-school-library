@@ -7,7 +7,7 @@ RSpec.describe Solver do
       expect(result.factorial(0)).to eq(1)
       expect(result.factorial(1)).to eq 1
       expect(result.factorial(2)).to eq 2
-      expect(result.factorial(3)).to eq(3)
+      expect(result.factorial(3)).to eq(6)
       expect(result.factorial(-2)).to eq('No negative number')
     end
   end 
